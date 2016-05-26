@@ -1,0 +1,27 @@
+<div class="form-group row group-type-select">
+    <input type="hidden" ng-model="group.meta.plugin" id="form-plugin" value="caldera-forms" />
+
+    <div class="col-sm-12">
+        <div id="tests" ng-repeat="variant in group.variants track by $index">
+            <div id="test-{{variant.ID}}">
+                <ng-form name="innerForm">
+                    <div class="form-group row">
+                        <label for="text-{{variant.ID}}" class="col-sm-3">
+                            {{translate.forms.form}}
+                        </label>
+
+                        <input name="text" type="text" id="text-{{variant.ID}}" ng-model="variant.content" class="col-sm-7" ng-required="true" />
+                        <div class="col-sm-2 text-right">
+                            <span ng-click="removeTest( $index )" class="delete" title="{{translate.group.delete}}">
+                                <i class="fa fa-minus-circle"></i>
+                            </span>
+                        </div>
+                    </div>
+                </ng-form>
+            </div>
+        </div>
+        <a class="btn btn-default btn-block add-new-test" ng-click="addNewTest()" >
+            {{translate.forms.add_form}}
+        </a>
+    </div>
+</div>
