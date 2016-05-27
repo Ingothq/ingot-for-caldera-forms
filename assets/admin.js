@@ -1,6 +1,4 @@
-/**
- * Created by josh on 5/25/16.
- */
-jQuery( document ).ready( function ( $ ) {
-
-} );
+ingotApp.controller( 'CFforms', [ '$scope', function ( $scope ) {
+    var forms = INGOT_FORM_CF.forms;
+    $scope.forms = forms;
+} ] );

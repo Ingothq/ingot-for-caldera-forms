@@ -34,8 +34,8 @@ class admin {
 	 * @uses "admin_enqueue_scripts" action
 	 */
 	public function register_scripts(){
-		wp_register_script( 'ingot-form',  $this->url, [ 'ingot-admin-app' ]  );
-		wp_localize_script( 'ingot-form', 'INGOT_FORM', $this->vars() );
+		wp_register_script( 'ingot-form-cf',  $this->url, [ 'ingot-admin-app' ]  );
+		wp_localize_script( 'ingot-form-cf', 'INGOT_FORM_CF', $this->vars() );
 	}
 
 	/**
@@ -49,7 +49,7 @@ class admin {
 	 */
 	public function load_scripts( $hook ){
 		if( 'toplevel_page_ingot-admin-app' == $hook ) {
-			wp_enqueue_script( 'ingot-form' );
+			wp_enqueue_script( 'ingot-form-cf' );
 		}
 
 	}
@@ -62,11 +62,15 @@ class admin {
 	 * @return array
 	 */
 	protected function vars(){
-		$vars = [];
+		$vars = [ 'forms' => [] ];
 		$forms = \Caldera_Forms_Forms::get_forms( true );
 
-		foreach ($forms as $form ){
-			$vars[ 'forms' ][ 'cf' ][ $form[ 'ID' ] ] = $form[ 'name' ];
+		foreach ( $forms as $form ){
+			$vars[ 'forms' ][] = [
+				'id' => $form[ 'ID' ],
+				'name' => $form[ 'name' ]
+			];
+
 		}
 
 		return $vars;

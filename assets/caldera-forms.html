@@ -10,7 +10,12 @@
                             {{translate.forms.form}}
                         </label>
 
-                        <input name="text" type="text" id="text-{{variant.ID}}" ng-model="variant.content" class="col-sm-7" ng-required="true" />
+                        <select name="text" type="text" id="text-{{variant.ID}}" ng-model="variant.content" class="col-sm-7 ingot-cf-form-chooser" ng-required="true" ng-controller="CFforms">
+                            <option ng-repeat="form in forms track by form.id" value="{{form.id}}">
+                                {{form.name}}
+                            </option>
+
+                        </select>
                         <div class="col-sm-2 text-right">
                             <span ng-click="removeTest( $index )" class="delete" title="{{translate.group.delete}}">
                                 <i class="fa fa-minus-circle"></i>
