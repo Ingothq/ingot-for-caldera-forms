@@ -53,12 +53,15 @@ add_filter( 'ingot_click_type_ui_urls', function( $urls ){
  * @since 0.2.0
  */
 add_filter( 'ingot_ui_translation_strings', function( $strings ){
-	$strings[ 'forms' ] = [
-		'form' => esc_html__( 'Form', 'ingot' ),
-		'add_form' => esc_html__( 'Add Form', 'ingot' )
+	$strings[ 'forms' ][ 'cf' ] = [
+		'form' => esc_html__( 'Form', 'ingot-caldera-forms' ),
+		'add_form' => esc_html__( 'Add Form', 'ingot-caldera-forms' ),
+		'cookie_mode_label' => esc_html__(  'Cookie Tracking', 'ingot-caldera-forms' ),
+		'cookie_mode_desc' => esc_html__(  'If checked, variants will be chosen by visitor, if not they will be chosen per page load.', 'ingot-caldera-forms' ),
 	];
 
 	return $strings;
+
 });
 
 /**
@@ -89,7 +92,4 @@ function ingot_cf_cb( $group ){
 	$ui = new ingot\addon\forms\cf\render( $group );
 	return $ui->get_html();
 }
-
-
-
 

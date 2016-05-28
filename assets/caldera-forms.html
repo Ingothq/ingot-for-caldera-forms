@@ -1,5 +1,19 @@
+<div class="form-group row">
+    <div class="col-sm-12">
+        <label for="form-cookie-cf" id="form-cookie-cf-label" class="col-sm-12 col-md-3">
+            {{translate.forms.cf.cookie_mode_label}}
+        </label>
+        <input type="checkbox" ng-model="group.meta.cookie" id="form-cookie-cf" class="col-sm-12 col-md-3" aria-labelledby="form-cookie-cf-label" aria-describedby="form-cookie-cf-desc" value="{{group.meta.cookie}}">
+        <p id="form-cookie-cf-desc" class="col-sm-12">
+            {{translate.forms.cf.cookie_mode_desc}}
+        </p>
+    </div>
+</div>
+
+<input type="hidden" ng-model="group.meta.plugin" id="form-plugin" value="caldera-forms"/>
+
 <div class="form-group row group-type-select">
-    <input type="hidden" ng-model="group.meta.plugin" id="form-plugin" value="caldera-forms" />
+
 
     <div class="col-sm-12">
         <div id="tests" ng-repeat="variant in group.variants track by $index">
@@ -7,10 +21,10 @@
                 <ng-form name="innerForm">
                     <div class="form-group row">
                         <label for="text-{{variant.ID}}" class="col-sm-3">
-                            {{translate.forms.form}}
+                            {{translate.forms.cf.form}}
                         </label>
 
-                        <select name="text" type="text" id="text-{{variant.ID}}" ng-model="variant.content" class="col-sm-7 ingot-cf-form-chooser" ng-required="true" ng-controller="CFforms">
+                        <select name="text" type="text" id="text-{{variant.ID}}" ng-model="variant.content" class="col-sm-7 ingot-cf-form-chooser" ng-required="true" ng-controller="CFforms" aria-labelledby="text-{{variant.ID}}">
                             <option ng-repeat="form in forms track by form.id" value="{{form.id}}">
                                 {{form.name}}
                             </option>
@@ -25,8 +39,8 @@
                 </ng-form>
             </div>
         </div>
-        <a class="btn btn-default btn-block add-new-test" ng-click="addNewTest()" >
-            {{translate.forms.add_form}}
+        <a class="btn btn-default btn-block add-new-test" ng-click="addNewTest()">
+            {{translate.forms.cf.add_form}}
         </a>
     </div>
 </div>
