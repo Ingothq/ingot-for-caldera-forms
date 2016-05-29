@@ -1,4 +1,15 @@
 <?php
+/**
+ * Output forms
+ *
+ * @package   ingot_cf
+ * @author    Josh Pollock <Josh@JoshPress.net>
+ * @license   GPL-2.0+
+ * @link
+ * @copyright 2016 Josh Pollock
+ */
+
+
 namespace ingot\addon\forms\cf;
 
 class render extends \ingot\ui\render\click_tests\click {

@@ -1,4 +1,15 @@
 <?php
+
+/**
+ * Setup admin for Caldera Forms testing
+ *
+ * @package   ingot_cf
+ * @author    Josh Pollock <Josh@JoshPress.net>
+ * @license   GPL-2.0+
+ * @link
+ * @copyright 2016 Josh Pollock
+ */
+
 namespace ingot\addon\forms\cf;
 
 class admin {
@@ -6,7 +17,7 @@ class admin {
 	/**
 	 * URL for the JS file
 	 *
-	 * @since 0.2.0
+	 * @since 0.0.2
 	 *
 	 * @var string
 	 */
@@ -29,7 +40,7 @@ class admin {
 	/**
 	 * Register script
 	 *
-	 * @since 0.2.0
+	 * @since 0.0.2
 	 *
 	 * @uses "admin_enqueue_scripts" action
 	 */
@@ -41,7 +52,7 @@ class admin {
 	/**
 	 * Enqueue script
 	 *
-	 * @since 0.2.0
+	 * @since 0.0.2
 	 *
 	 * @uses "admin_enqueue_scripts" action
 	 *
@@ -57,7 +68,7 @@ class admin {
 	/**
 	 * Prepare ID/names of forms to be localized
 	 *
-	 * @since 0.2.0
+	 * @since 0.0.2
 	 *
 	 * @return array
 	 */
