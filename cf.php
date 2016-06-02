@@ -143,3 +143,23 @@ add_filter( 'ingot_loaded', function(){
 	init::check();
 
 });
+
+/**
+ * Add CF licensing
+ *
+ * @since 1.0.0
+ */
+add_action( 'init', function(){
+
+	$plugin = array(
+		'name'		=>	'Ingot For Caldera Forms',
+		'slug'		=>	'ingot-for-caldera-forms',
+		'url'		=>	'https://calderawp.com/',
+		'version'	=>	INGOT_CF_VER,
+		'key_store'	=>  'ingot_cf_license',
+		'file'		=>  INGOT_CF_CORE
+	);
+
+	new \calderawp\licensing_helper\licensing( $plugin );
+
+});

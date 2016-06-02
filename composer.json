@@ -1,0 +1,23 @@
+{
+  "name": "ingot/ingot",
+  "description" : "A/B testing for Caldera Forms",
+  "type" : "wordpress-plugin",
+  "keywords" : [ "wordpress", "ingot", "caldera" ],
+  "license" : "GPL-2.0+",
+  "authors": [
+    {
+      "name": "Josh Pollock",
+      "homepage": "http://JoshPress.net",
+      "role": "Developer"
+    }
+    ],
+  "require": {
+    "calderawp/dismissible-notice": "dev-master",
+    "calderawp/licensing-helper" : "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "ingot\\addon\\cf\\": "src"
+    }
+  }
+}
